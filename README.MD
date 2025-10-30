@@ -1,5 +1,5 @@
 # SmartCMD – AI-Powered Command Line Assistant
-
+![Alt text](sio.png)
 SmartCMD is an intelligent command-line companion that helps you **find, understand, and run terminal commands** — powered by AI.
 
 No more Googling "how to list files" or "how to check disk space". Just type what you want, and SmartCMD figures it out for you.
