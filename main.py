@@ -10,17 +10,14 @@ from rich.text import Text
 
 console = Console()
 
-# Create ASCII art text
 fig = Figlet(font="ansi_shadow")
 ascii_art = fig.renderText("> sio")
 
-# Split the text into lines for per-line gradient coloring
 lines = ascii_art.splitlines()
 
-# Define gradient colors (you can tweak these)
-colors = ["#e9ef42", "#139fd1", "#d74bff"]  # blue → purple → pink
+colors = ["#e9ef42", "#139fd1", "#d74bff"]  
 
-# Function to interpolate between colors smoothly
+
 def gradient_color(start, end, factor):
     return tuple(int(start[i] + (end[i] - start[i]) * factor) for i in range(3))
 
@@ -42,16 +39,14 @@ def gradient_palette(colors, steps):
             result.append(rgb_to_hex(rgb))
     return result
 
-# Generate a gradient for the number of lines
 palette = gradient_palette(colors, len(lines))
 
-# Print the ASCII art line by line with gradient
 console.print()
 for i, line in enumerate(lines):
     console.print(Text(line, style=f"bold {palette[i % len(palette)]}"))
 console.print()
 
-# Add footer text
+
 console.print("[bold magenta]Ask SIO, your local ai-cli[/bold magenta]")
 console.print("• To quit, type [cyan]quit[/cyan]\n")
 
